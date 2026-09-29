@@ -19,6 +19,8 @@
  */
 
 @theme inline {
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Work Sans", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,24 +64,24 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.5rem;
+  --background: oklch(0.07 0.02 240);
+  --foreground: oklch(0.95 0.01 220);
+  --card: oklch(0.11 0.025 240);
+  --card-foreground: oklch(0.95 0.01 220);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.65 0.18 233);
+  --primary-foreground: oklch(0.07 0.02 240);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.15 0.02 240);
+  --muted-foreground: oklch(0.7 0.025 225);
+  --accent: oklch(0.7 0.19 48);
+  --accent-foreground: oklch(0.07 0.02 240);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
+  --border: oklch(1 0 0 / 10%);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -140,5 +142,28 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    letter-spacing: 0;
+    scroll-behavior: smooth;
   }
 }
+
+@utility font-display { font-family: var(--font-display); }
+@utility section-shell { margin-inline: auto; max-width: 1440px; padding: 6rem 1.25rem; @media (min-width: 768px) { padding-inline: 2.5rem; } }
+@utility section-kicker { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .22em; color: var(--color-primary); }
+@utility section-title { margin-top: 1rem; font-family: var(--font-display); font-size: clamp(2.75rem, 6vw, 5.5rem); line-height: .95; & em { color: var(--color-primary); font-weight: 400; } }
+@utility story-lead { font-family: var(--font-display); font-size: clamp(1.8rem, 3.4vw, 3.3rem); line-height: 1.12; }
+@utility meta-label { font-size: .65rem; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; color: var(--color-muted-foreground); }
+@utility glass-panel { border: 1px solid var(--color-border); border-radius: var(--radius); background: oklch(1 0 0 / 5%); backdrop-filter: blur(18px); }
+@utility glass-frame { display: block; overflow: hidden; border: 1px solid var(--color-border); border-radius: var(--radius); background: oklch(1 0 0 / 6%); padding: .75rem; backdrop-filter: blur(18px); }
+@utility primary-action { display: inline-flex; align-items: center; gap: .65rem; border-radius: var(--radius); background: var(--color-primary); color: var(--color-primary-foreground); padding: .8rem 1.25rem; font-size: .875rem; font-weight: 600; transition: background-color .2s ease; &:hover { background: oklch(0.74 0.14 197); } }
+@utility tag { border: 1px solid var(--color-border); border-radius: .3rem; padding: .35rem .6rem; font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--color-muted-foreground); }
+
+.ambient { position: absolute; border-radius: 999px; filter: blur(120px); pointer-events: none; animation: drift 18s ease-in-out infinite; }
+.ambient-one { width: 34rem; height: 34rem; left: -18rem; top: -10rem; background: oklch(0.65 0.18 233 / 24%); }
+.ambient-two { width: 30rem; height: 30rem; right: -16rem; bottom: 0; background: oklch(0.7 0.19 48 / 10%); animation-delay: -7s; }
+@keyframes drift { 50% { transform: translateY(-24px); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ambient { animation: none; } }
+
+a { transition: color .2s ease, opacity .2s ease; }
+a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
