@@ -1,13 +1,10 @@
-export const images = {
-  portrait: "https://d2xsxph8kpxj0f.cloudfront.net/310519663349960110/6SjsJTkvGkZLDiyDEkt5Y8/portrait-selfie_295a0028.jpg",
-  cat: "https://d2xsxph8kpxj0f.cloudfront.net/310519663349960110/6SjsJTkvGkZLDiyDEkt5Y8/portrait-cat_59a80f26.webp",
-  family: "https://d2xsxph8kpxj0f.cloudfront.net/310519663349960110/6SjsJTkvGkZLDiyDEkt5Y8/portrait-kid_aa37853a.jpg",
-  casino: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663349960110/xsoYbQrLfUjKvgOz.webp",
-  faceRewrite: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663349960110/RcUTwRMjvNeeLVMP.png",
-  fasting: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663349960110/IJevwtLqaAnRBWhN.png",
-  futureProof: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663349960110/uusxqhSsRCdWBWTT.jpg",
-  adonboi: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663349960110/WNOlWIImlGEozwjg.webp",
-} as const;
+import portrait from "../assets/portfolio/daniel-avatar.jpg";
+import casino from "../assets/portfolio/rolling-in-the-dough.png";
+import fasting from "../assets/portfolio/fasting-and-freedom.png";
+import futureProof from "../assets/portfolio/future-proof.png";
+import adonboi from "../assets/portfolio/adonboi.png";
+
+export const images = { portrait, casino, faceRewrite: portrait, fasting, futureProof, adonboi } as const;
 
 export const projects = [
   { title: "Rolling in the Dough", subtitle: "Python-Coded Casino Slot Machine", description: "A fully custom Python-coded slot machine casino game engineered with above-average player odds compared to any other app or game on the market. Built from the ground up with a proprietary RNG algorithm that genuinely rewards players — because the house doesn't always have to win. Sleek neon-Vegas aesthetic, smooth gameplay, and real entertainment value baked in.", tags: ["Python", "Gaming", "Casino", "Slots"], image: images.casino, link: "https://luckyslots-aynovan9.manus.space/", stats: [["50K+", "Players"], ["30+", "Games"], ["$250K", "Jackpot"]] },
