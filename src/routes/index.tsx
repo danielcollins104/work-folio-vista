@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { companies, images, partnerships, projects, timeline } from "../lib/portfolio-data";
+import { ContactForm } from "../components/ContactForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
