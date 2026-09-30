@@ -40,14 +40,22 @@ export const sendContactInquiry = createServerFn({ method: "POST" })
       </div>`;
 
     const { sendLovableEmail } = await import("@lovable.dev/email-js");
-    const result = await sendLovableEmail({
-      from: `Portfolio <contact@${senderDomain}>`,
-      to: RECIPIENT,
-      replyTo: data.email,
-      subject: `Portfolio inquiry from ${data.name}`,
-      html,
-    });
+    const result = await sendLovableEmail(
+      {
+        from: `Portfolio <contact@${senderDomain}>`,
+        sender_domain: senderDomain,
+        to: RECIPIENT,
+        reply_to: data.email,
+        subject: `Portfolio inquiry from ${data.name}`,
+        html,
+        text: `New portfolio inquiry\n\nName: ${data.name}\nEmail: ${data.email}${data.topic ? `\nTopic: ${data.topic}` : ""}\n\n${data.message}`,
+        purpose: "transactional",
+        label: "contact-form",
+        idempotency_key: `contact-${data.email}-${data.message.length}-${Date.now()}`,
+      },
+      { apiKey },
+    );
 
-    if (!result.sent) return { sent: false as const, reason: result.reason ?? "send_failed" };
+    if (!result.success) return { sent: false as const, reason: result.status ?? "send_failed" };
     return { sent: true as const };
   });
