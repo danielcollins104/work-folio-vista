@@ -163,7 +163,11 @@
 .ambient-one { width: 34rem; height: 34rem; left: -18rem; top: -10rem; background: oklch(0.65 0.18 233 / 24%); }
 .ambient-two { width: 30rem; height: 30rem; right: -16rem; bottom: 0; background: oklch(0.7 0.19 48 / 10%); animation-delay: -7s; }
 @keyframes drift { 50% { transform: translateY(-24px); } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ambient { animation: none; } }
+.portrait-frame { animation: portrait-enter .9s ease-out both; }
+.editorial-enter { animation: editorial-enter .7s ease-out both; }
+@keyframes portrait-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes editorial-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ambient, .portrait-frame, .editorial-enter { animation: none; } }
 
 a { transition: color .2s ease, opacity .2s ease; }
 a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
