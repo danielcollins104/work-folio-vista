@@ -31,7 +31,7 @@ function Index() {
       <main id="top">
         <section className="relative mx-auto grid max-w-[1440px] grid-cols-12 items-center gap-8 px-5 py-14 md:px-10 lg:min-h-[830px] lg:py-20">
           <div className="ambient ambient-one" /><div className="ambient ambient-two" />
-          <div className="relative z-10 col-span-12 lg:col-span-7">
+          <div className="relative z-10 col-span-12 lg:col-span-7 editorial-enter">
             <p className="section-kicker">The independent portfolio · No. 01</p>
             <h1 className="mt-6 font-display text-[clamp(4.5rem,11vw,9.5rem)] leading-[0.8] text-foreground">Daniel<br /><em className="font-normal text-primary">Collins</em></h1>
             <p className="mt-8 max-w-[48ch] text-lg leading-relaxed text-muted-foreground">Entrepreneur, serial founder, and tech innovator. I build products that matter — from Python-coded casino games with fair odds to AI-powered facial manipulation and a fasting program born from personal recovery.</p>
@@ -41,7 +41,7 @@ function Index() {
             </div>
           </div>
           <div className="relative z-10 col-span-12 lg:col-span-5">
-            <div className="glass-frame"><img className="aspect-[4/5] w-full rounded-md object-cover object-top" src={images.portrait} alt="Daniel Collins" /></div>
+             <div className="glass-frame portrait-frame"><img className="aspect-[4/5] w-full rounded-md object-cover object-top" src={images.portrait} alt="Daniel Collins outdoors by the lake" /></div>
             <div className="mt-3 grid grid-cols-3 gap-3">
               {[["4", "Companies"], ["5", "Live products"], ["7+", "Years building"]].map(([value,label]) => <div className="glass-panel p-4" key={label}><p className="font-display text-3xl text-primary">{value}</p><p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-muted-foreground">{label}</p></div>)}
             </div>

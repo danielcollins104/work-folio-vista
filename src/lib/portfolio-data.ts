@@ -3,8 +3,9 @@ import casino from "../assets/portfolio/rolling-in-the-dough.png";
 import fasting from "../assets/portfolio/fasting-and-freedom.png";
 import futureProof from "../assets/portfolio/future-proof.png";
 import adonboi from "../assets/portfolio/adonboi.png";
+import naturalPortrait from "../assets/portfolio/daniel-natural-portrait.jpg";
 
-export const images = { portrait, casino, faceRewrite: portrait, fasting, futureProof, adonboi } as const;
+export const images = { portrait: naturalPortrait, casino, faceRewrite: portrait, fasting, futureProof, adonboi } as const;
 
 export const projects = [
   { title: "Rolling in the Dough", subtitle: "Python-Coded Casino Slot Machine", description: "A fully custom Python-coded slot machine casino game engineered with above-average player odds compared to any other app or game on the market. Built from the ground up with a proprietary RNG algorithm that genuinely rewards players — because the house doesn't always have to win. Sleek neon-Vegas aesthetic, smooth gameplay, and real entertainment value baked in.", tags: ["Python", "Gaming", "Casino", "Slots"], image: images.casino, link: "https://luckyslots-aynovan9.manus.space/", stats: [["50K+", "Players"], ["30+", "Games"], ["$250K", "Jackpot"]] },
