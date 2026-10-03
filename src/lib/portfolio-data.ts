@@ -5,8 +5,9 @@ import futureProof from "../assets/portfolio/future-proof.png";
 import adonboi from "../assets/portfolio/adonboi.png";
 import naturalPortrait from "../assets/portfolio/daniel-natural-portrait.jpg";
 import dcEnterprisesLogo from "../assets/portfolio/dc-enterprises-logo.png";
+import stayingFreeLogo from "../assets/portfolio/staying-free-logo.png";
 
-export const images = { portrait: naturalPortrait, casino, faceRewrite: portrait, fasting, futureProof, adonboi, dcEnterprisesLogo } as const;
+export const images = { portrait: naturalPortrait, casino, faceRewrite: portrait, fasting, futureProof, adonboi, dcEnterprisesLogo, stayingFreeLogo } as const;
 
 export const projects = [
   { title: "Rolling in the Dough", subtitle: "Python-Coded Casino Slot Machine", description: "A fully custom Python-coded slot machine casino game engineered with above-average player odds compared to any other app or game on the market. Built from the ground up with a proprietary RNG algorithm that genuinely rewards players — because the house doesn't always have to win. Sleek neon-Vegas aesthetic, smooth gameplay, and real entertainment value baked in.", tags: ["Python", "Gaming", "Casino", "Slots"], image: images.casino, link: "https://luckyslots-aynovan9.manus.space/", stats: [["50K+", "Players"], ["30+", "Games"], ["$250K", "Jackpot"]] },
@@ -20,7 +21,7 @@ export const companies = [
   ["Nexus Digital Labs", "Founder & CEO", "2021", "Daniel's flagship digital product studio — the engine behind Rolling in the Dough, FaceRewrite, and more. Specializing in AI-powered applications, Python game development, and disruptive SaaS solutions."],
   ["Forge AI Systems", "Co-Founder & CTO", "2022", "AI research and development firm with ties to the University of Minnesota scientific community, focused on computer vision, Hugging Face integrations, and generative AI."],
   ["DC Enterprises", "Founder", "2023", "Independent gaming company and home of Rolling in the Dough, built on the principle that players deserve a fair shot."],
-  ["Freedom Dawn Collective", "Founder & Lead Coach", "2024", "A wellness and personal transformation community rooted in Biblical wisdom and lived experience."],
+  ["Staying Free", "Founder & Lead Coach", "2024", "A wellness and personal transformation community rooted in Biblical wisdom and lived experience."],
 ] as const;
 
 export const timeline = [
@@ -29,7 +30,7 @@ export const timeline = [
   ["2021", "First Lines of Python Code", "Taught himself Python and began building Rolling in the Dough — proving that a fair casino game was possible and that anyone can learn to build, regardless of where they started."],
   ["2022", "Founded Nexus Digital Labs", "Launched the studio with a vision to build AI-first digital products that actually serve people. Minneapolis-based, globally minded."],
   ["2023", "FaceRewrite Development", "Dove into Hugging Face's AI ecosystem and began building FaceRewrite — a professional-grade facial manipulation web app powered by open-source AI."],
-  ["2024", "Fasting to Break Addictions Launch", "Turned personal transformation into a community program and launched Freedom Dawn Collective to help others find freedom through fasting and faith."],
+  ["2024", "Fasting to Break Addictions Launch", "Turned personal transformation into a community program and launched Staying Free to help others find freedom through fasting and faith."],
   ["2026", "Building in Public from Minneapolis", "Continuing to build, ship, and grow as a serial founder, tech innovator, and lifelong student of timeless wisdom."],
 ] as const;
 
@@ -38,6 +39,6 @@ export const partnerships = [
   ["University of Minnesota", "Research Partnership", "Collaborative ties with scientists and professors informing the AI and neuroscience foundations across Daniel's platforms."],
   ["Python Software Foundation", "Technology Ecosystem", "Rolling in the Dough is built entirely in Python, leveraging it for game logic and RNG engineering."],
   ["Biblical Wisdom Tradition", "Philosophical Foundation", "Fasting and Freedom draws from teachings and practices handed down since Biblical times."],
-  ["Minneapolis Recovery Community", "Community Partner", "Local recovery networks and support groups that inform and amplify Freedom Dawn Collective."],
+  ["Minneapolis Recovery Community", "Community Partner", "Local recovery networks and support groups that inform and amplify Staying Free."],
   ["Open Source AI Community", "Development Partner", "Active collaborator in the global open-source AI ecosystem, particularly around Hugging Face model development."],
 ] as const;
