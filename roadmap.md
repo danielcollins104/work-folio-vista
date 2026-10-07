@@ -5,3 +5,4 @@
 - [x] Recolor the Staying Free logo to electric blue / white / black (electric version now live + card accent + favicon source).
 - [x] Add the Nexus Digital Labs logo beside the company name and set it as the favicon.
 - [x] Swap the Nexus logo for the uploaded Nexus-2 mark (icon cropped to a clean square, stray red speck removed, favicon refreshed).
+- [x] Add the Notch IP AI Systems robot-mascot badge next to its company name (logo live, build OK)
