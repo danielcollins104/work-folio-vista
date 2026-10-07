@@ -20,7 +20,7 @@ export const projects = [
 
 export const companies = [
   ["Nexus Digital Labs", "Founder & CEO", "2021", "Daniel's flagship digital product studio — the engine behind Rolling in the Dough, FaceRewrite, and more. Specializing in AI-powered applications, Python game development, and disruptive SaaS solutions."],
-  ["Notch IP AI Systems", "Co-Founder & CTO", "2022", "AI research and development firm with ties to the University of Minnesota scientific community, focused on computer vision, Hugging Face integrations, and generative AI."],
+  ["Notch IP AI Systems ", "Co-Founder & CTO", "2022", "AI research and development firm with ties to the University of Minnesota scientific community, focused on computer vision, Hugging Face integrations, and generative AI."],
   ["DC Enterprises", "Founder", "2023", "Independent gaming company and home of Rolling in the Dough, built on the principle that players deserve a fair shot."],
   ["Staying Free", "Founder & Lead Coach", "2024", "A wellness and personal transformation community rooted in Biblical wisdom and lived experience."],
 ] as const;
