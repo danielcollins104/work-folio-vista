@@ -7,8 +7,9 @@ import naturalPortrait from "../assets/portfolio/daniel-natural-portrait.jpg";
 import dcEnterprisesLogo from "../assets/portfolio/dc-enterprises-logo.png";
 import stayingFreeLogo from "../assets/portfolio/staying-free-logo-electric.png";
 import nexusLogoAsset from "../assets/portfolio/nexus-digital-labs-logo.png.asset.json";
+import notchLogoAsset from "../assets/portfolio/notch-ip-ai-systems-logo.png.asset.json";
 
-export const images = { portrait: naturalPortrait, casino, faceRewrite: portrait, fasting, futureProof, adonboi, dcEnterprisesLogo, stayingFreeLogo, nexusLogo: nexusLogoAsset.url } as const;
+export const images = { portrait: naturalPortrait, casino, faceRewrite: portrait, fasting, futureProof, adonboi, dcEnterprisesLogo, stayingFreeLogo, nexusLogo: nexusLogoAsset.url, notchLogo: notchLogoAsset.url } as const;
 
 export const projects = [
   { title: "Rolling in the Dough", subtitle: "Python-Coded Casino Slot Machine", description: "A fully custom Python-coded slot machine casino game engineered with above-average player odds compared to any other app or game on the market. Built from the ground up with a proprietary RNG algorithm that genuinely rewards players — because the house doesn't always have to win. Sleek neon-Vegas aesthetic, smooth gameplay, and real entertainment value baked in.", tags: ["Python", "Gaming", "Casino", "Slots"], image: images.casino, link: "https://luckyslots-aynovan9.manus.space/", stats: [["50K+", "Players"], ["30+", "Games"], ["$250K", "Jackpot"]] },
