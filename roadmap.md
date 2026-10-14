@@ -6,3 +6,4 @@
 - [x] Add the Nexus Digital Labs logo beside the company name and set it as the favicon.
 - [x] Swap the Nexus logo for the uploaded Nexus-2 mark (icon cropped to a clean square, stray red speck removed, favicon refreshed).
 - [x] Add the Notch IP AI Systems robot-mascot badge next to its company name (logo live, build OK)
+- [x] Replace the Staying Free logo with the uploaded cross-and-dove emblem (cropped to a square badge, live, build OK)
