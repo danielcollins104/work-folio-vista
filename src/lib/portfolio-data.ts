@@ -27,7 +27,7 @@ export const companies = [
 ] as const;
 
 export const timeline = [
-  ["The Struggle", "Homelessness, Addiction & Survival", "Battled years of homelessness, drug addiction, misunderstandings, and police harassment on the streets of Minneapolis and Saint Paul. I didn't know it then, but those years were teaching me the kind of wisdom you can't be taught — only survive."],
+  ["The Struggle", "Homelessness, Addiction & Survival", "Battled years of homelessness, drug addiction, misunderstandings, and police harassment on the streets of Minneapolis and Saint Paul. I didn't know it then, but those years were teaching me the kind of wisdom you can't be taught in schools."],
   ["The Turn", "Discovery of Ancient Teachings", "Found grounding in Biblical wisdom and fasting traditions passed down through millennia. Fasting became the tool that broke the chains — and sparked the mission to help others."],
   ["2021", "First Lines of Python Code", "Taught himself Python and began building Rolling in the Dough — proving that a fair casino game was possible and that anyone can learn to build, regardless of where they started."],
   ["2022", "Founded Nexus Digital Labs", "Launched the studio with a vision to build AI-first digital products that actually serve people. Minneapolis-based, globally minded."],
