@@ -171,3 +171,4 @@
 
 a { transition: color .2s ease, opacity .2s ease; }
 a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
+section[id], main[id] { scroll-margin-top: 5.5rem; }

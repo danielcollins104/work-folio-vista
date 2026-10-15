@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Mail, MapPin, Menu, X } from "lucide-react";
 import { companies, images, partnerships, projects, timeline } from "../lib/portfolio-data";
 import { ContactForm } from "../components/ContactForm";
 
@@ -15,17 +16,30 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const NAV = [
+  ["#about", "Story"],
+  ["#companies", "Ventures"],
+  ["#projects", "Projects"],
+  ["#partnerships", "Partners"],
+  ["#contact", "Contact"],
+] as const;
+
 function Index() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="min-h-screen overflow-hidden bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 md:px-10">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 md:px-10">
           <a href="#top" className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.18em]"><span className="size-2 rounded-full bg-accent" />Daniel Collins</a>
           <nav aria-label="Primary navigation" className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
-            <a href="#about">Story</a><a href="#companies">Ventures</a><a href="#projects">Projects</a><a href="#partnerships">Partners</a><a href="#contact">Contact</a>
+            {NAV.map(([href, label]) => <a href={href} key={href}>{label}</a>)}
           </nav>
-          <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">Minneapolis · 2026</span>
+          <div className="flex items-center gap-4">
+            <span className="hidden text-[11px] uppercase tracking-[0.16em] text-muted-foreground md:inline">Minneapolis · 2026</span>
+            <button type="button" className="-mr-1 inline-flex size-9 items-center justify-center rounded-md border border-border text-muted-foreground transition hover:border-primary/50 hover:text-foreground md:hidden" aria-expanded={menuOpen} aria-controls="mobile-nav" aria-label={menuOpen ? "Close menu" : "Open menu"} onClick={() => setMenuOpen(o => !o)}>{menuOpen ? <X size={17} /> : <Menu size={17} />}</button>
+          </div>
         </div>
+        {menuOpen && <nav id="mobile-nav" aria-label="Primary navigation" className="border-t border-border bg-background/95 backdrop-blur-xl md:hidden"><ul className="mx-auto flex max-w-[1440px] list-none flex-col px-5 py-1 text-sm">{NAV.map(([href, label]) => <li key={href}><a className="block border-b border-border/60 py-3 text-muted-foreground transition hover:text-foreground last:border-0" href={href} onClick={() => setMenuOpen(false)}>{label}</a></li>)}</ul></nav>}
       </header>
 
       <main id="top">
