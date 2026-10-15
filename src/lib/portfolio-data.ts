@@ -1,22 +1,21 @@
 import portrait from "../assets/portfolio/daniel-avatar.jpg";
 import casino from "../assets/portfolio/rolling-in-the-dough.png";
-import fasting from "../assets/portfolio/fasting-and-freedom.png";
-import futureProof from "../assets/portfolio/future-proof.png";
-import adonboi from "../assets/portfolio/adonboi.png";
+import fasting from "../assets/portfolio/fasting-and-freedom.jpg";
+import futureProof from "../assets/portfolio/future-proof.jpg";
 import naturalPortrait from "../assets/portfolio/daniel-natural-portrait.jpg";
 import dcEnterprisesLogo from "../assets/portfolio/dc-enterprises-logo.png";
 import stayingFreeLogo from "../assets/portfolio/staying-free-logo-electric.png";
 import nexusLogoAsset from "../assets/portfolio/nexus-digital-labs-logo.png.asset.json";
 import notchLogoAsset from "../assets/portfolio/notch-ip-ai-systems-logo.png.asset.json";
 
-export const images = { portrait: naturalPortrait, casino, faceRewrite: portrait, fasting, futureProof, adonboi, dcEnterprisesLogo, stayingFreeLogo, nexusLogo: nexusLogoAsset.url, notchLogo: notchLogoAsset.url } as const;
+export const images = { portrait: naturalPortrait, casino, faceRewrite: portrait, fasting, futureProof, dcEnterprisesLogo, stayingFreeLogo, nexusLogo: nexusLogoAsset.url, notchLogo: notchLogoAsset.url } as const;
 
 export const projects = [
   { title: "Rolling in the Dough", subtitle: "Python-Coded Casino Slot Machine", description: "A fully custom Python-coded slot machine casino game engineered with above-average player odds compared to any other app or game on the market. Built from the ground up with a proprietary RNG algorithm that genuinely rewards players — because the house doesn't always have to win. Sleek neon-Vegas aesthetic, smooth gameplay, and real entertainment value baked in.", tags: ["Python", "Gaming", "Casino", "Slots"], image: images.casino, link: "https://luckyslots-aynovan9.manus.space/", stats: [["50K+", "Players"], ["30+", "Games"], ["$250K", "Jackpot"]] },
   { title: "FaceRewrite (AvatarPipe)", subtitle: "AI Facial Manipulation Web App", description: "A cutting-edge web application for AI-powered facial manipulation, built on Hugging Face's state-of-the-art model ecosystem. FaceRewrite enables real-time face swapping, style transfer, age progression, and video manipulation — all accessible from the browser. Become a movie star, fix bad takes, create viral clips, and own the scene. Powered by the latest open-source AI breakthroughs.", tags: ["AI/ML", "Hugging Face", "Web App", "Computer Vision"], image: images.faceRewrite, link: "https://avatarpipe.com", stats: [["12K+", "Users"], ["1M+", "Videos"], ["99.2%", "Accuracy"]] },
   { title: "Fasting and Freedom", subtitle: "21-Day Guide to Break Free from Addictions", description: "A deeply personal and transformative 21-day program born from Daniel's own journey through addiction, homelessness, and recovery. Fasting and Freedom teaches the ancient, Biblically-rooted practice of voluntary, spiritually empowered fasting as a powerful tool to break addiction and reset the mind. Jesus said that some 'kind's of evil can \"ONLY\" be remedied by solutions that include fasting. Reclaim your best version of your self and your relationship with GOD.", tags: ["Wellness", "Fasting", "Faith", "Recovery"], image: images.fasting, link: "https://collinsphere370.gumroad.com/l/Fasting", stats: [["8K+", "Members"], ["21", "Days"], ["Freedom", "Is yours"]] },
   { title: "Future Proof: Keep Your Job", subtitle: "How NOT to Lose Your Job to AI", description: "As AI reshapes every industry, most workers are one software update away from obsolescence — but not you. Daniel's practical, no-fluff guide develops AI-proof skills, career strategies that machines can't replicate, and the edge to stay relevant in a changing world. Master them and you won't just stay employed — you'll be irreplaceable!", tags: ["AI", "Career", "Future Skills", "Strategy"], image: images.futureProof, link: "https://collinsphere370.gumroad.com/l/careeryes", stats: [["5K+", "Students"], ["AI-Proof", "Skills"], ["Protect", "Your future"]] },
-  { title: "AdonBoi Somali Translator", subtitle: "AI-Powered Language Bridge", description: "Breaking language barriers in real time. AdonBoi uses advanced AI for accurate, culturally aware translation between Somali and English, helping communities, businesses, and organizations communicate seamlessly.", tags: ["AI", "Translation", "Somali", "Community"], image: images.adonboi, link: "https://app.heygen.com/videos/in-the-loop-social-1ba85ed2e82c4e8cbc25b6485b45e5eb", videoEmbed: "https://app.heygen.com/embeds/1ba85ed2e82c4e8cbc25b6485b45e5eb", stats: [] },
+  { title: "AdonBoi Somali Translator", subtitle: "AI-Powered Language Bridge", description: "Breaking language barriers in real time. AdonBoi uses advanced AI for accurate, culturally aware translation between Somali and English, helping communities, businesses, and organizations communicate seamlessly.", tags: ["AI", "Translation", "Somali", "Community"], link: "https://app.heygen.com/videos/in-the-loop-social-1ba85ed2e82c4e8cbc25b6485b45e5eb", videoEmbed: "https://app.heygen.com/embeds/1ba85ed2e82c4e8cbc25b6485b45e5eb", stats: [] },
 ] as const;
 
 export const companies = [
