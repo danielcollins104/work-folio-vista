@@ -1,5 +1,5 @@
 import portrait from "../assets/portfolio/daniel-avatar.jpg";
-import casino from "../assets/portfolio/rolling-in-the-dough.png";
+import casino from "../assets/portfolio/rolling-in-the-dough.jpg";
 import fasting from "../assets/portfolio/fasting-and-freedom.jpg";
 import futureProof from "../assets/portfolio/future-proof.jpg";
 import naturalPortrait from "../assets/portfolio/daniel-natural-portrait.jpg";
