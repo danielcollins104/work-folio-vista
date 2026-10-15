@@ -1,5 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
+import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
+import type { Database } from "@/integrations/supabase/types";
 
 export const contactSchema = z.object({
   name: z.string().trim().min(1, "Please enter your name").max(100, "Name must be under 100 characters"),
@@ -12,15 +14,62 @@ export type ContactInput = z.infer<typeof contactSchema>;
 
 const RECIPIENT = "danielcollins104@gmail.com";
 
+// Every inquiry is kept in the database first, so a message is never lost even
+// when direct email delivery isn't configured yet. The insert runs as the anon
+// role through a publishable client, so the table's row-level security policy
+// (insert only, with a per-email throttle) is what actually guards the write.
+async function storeSubmission(data: ContactInput): Promise<{ stored: boolean; reason?: string }> {
+  const url = process.env["SUPABASE_URL"];
+  const key = process.env["SUPABASE_PUBLISHABLE_KEY"];
+  if (!url || !key) return { stored: false, reason: "db_not_configured" };
+
+  const client = createClient<Database>(url, key, {
+    auth: { persistSession: false },
+    global: {
+      fetch: (input, init) => {
+        const headers = new Headers(init?.headers);
+        if (key.startsWith("sb_") && headers.get("Authorization") === `Bearer ${key}`) headers.delete("Authorization");
+        headers.set("apikey", key);
+        return fetch(input, { ...init, headers });
+      },
+    },
+  });
+
+  const { error } = await client.from("contact_submissions").insert({
+    name: data.name,
+    email: data.email,
+    topic: data.topic ?? "",
+    message: data.message,
+  });
+
+  if (error) {
+    return {
+      stored: false,
+      reason: error.message.toLowerCase().includes("row-level security") ? "throttled" : "insert_failed",
+    };
+  }
+  return { stored: true };
+}
+
 export const sendContactInquiry = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
+    let stored = false;
+    let storeReason: string | undefined;
+    try {
+      const saved = await storeSubmission(data);
+      stored = saved.stored;
+      storeReason = saved.reason;
+    } catch {
+      storeReason = "insert_failed";
+    }
+
     const apiKey = process.env["LOVABLE_API_KEY"];
     const senderDomain = process.env["SENDER_DOMAIN"];
     if (!apiKey || !senderDomain) {
       // Email domain not configured yet — report a soft failure so the UI
       // can show a graceful fallback instead of a hard error.
-      return { sent: false as const, reason: "email_not_configured" as const };
+      return { sent: false as const, stored, reason: "email_not_configured" as const, storeReason };
     }
 
     const escape = (value: string) =>
@@ -56,6 +105,6 @@ export const sendContactInquiry = createServerFn({ method: "POST" })
       { apiKey },
     );
 
-    if (!result.success) return { sent: false as const, reason: result.status ?? "send_failed" };
-    return { sent: true as const };
+    if (!result.success) return { sent: false as const, stored, reason: result.status ?? "send_failed", storeReason };
+    return { sent: true as const, stored, storeReason };
   });
