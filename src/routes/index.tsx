@@ -43,7 +43,7 @@ function Index() {
           <div className="relative z-10 col-span-12 lg:col-span-5">
              <div className="glass-frame portrait-frame"><img className="aspect-[4/5] w-full rounded-md object-cover object-top" src={images.portrait} alt="Daniel Collins outdoors by the lake" /></div>
             <div className="mt-3 grid grid-cols-3 gap-3">
-              {[["4", "Companies"], ["5", "Live products"], ["7+", "Years building"]].map(([value,label]) => <div className="glass-panel p-4" key={label}><p className="font-display text-3xl text-primary">{value}</p><p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-muted-foreground">{label}</p></div>)}
+              {[["4", "Companies"], ["6", "Live products"], ["7+", "Years building"]].map(([value,label]) => <div className="glass-panel p-4" key={label}><p className="font-display text-3xl text-primary">{value}</p><p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-muted-foreground">{label}</p></div>)}
             </div>
           </div>
         </section>
